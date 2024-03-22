@@ -1,0 +1,87 @@
+---
+permalink: /titanic/
+layout: base
+title: Titanic
+search_exclude: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Prediction</title>
+</head>
+<body>
+    <h1>Titanic Survival Prediction</h1>
+    <div>
+        <label for="passenger-class">Passenger Class:</label>
+        <select id="passenger-class">
+            <option value="1">First Class</option>
+            <option value="2">Second Class</option>
+            <option value="3">Third Class</option>
+        </select>
+    </div>
+    <div>
+        <label for="age">Age:</label>
+        <input type="number" id="age" min="0">
+    </div>
+    <div>
+        <label for="gender">Gender:</label>
+        <select id="gender">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+    </div>
+    <div>
+        <label for="sibsp"># of Siblings and Spouses:</label>
+        <input type="number" id="sibsp" min="0">
+    </div>
+    <div>
+        <label for="parch"># of Parents and children on board:</label>
+        <input type="number" id="parch" min="0">
+    </div>
+    <div>
+        <label for="fare">Fare:</label>
+        <input type="number" id="fare" min="0">
+    </div>
+    <div>
+        <button onclick="predictSurvival()">Predict Survival</button>
+    </div>
+    <div id="prediction"></div>
+
+    <script>
+        function predictSurvival() {
+            const Pclass = document.getElementById('passenger-class').value;
+            const Age = document.getElementById('age').value;
+            const Sex = document.getElementById('gender').value;
+            const SibSp = document.getElementById('sibsp').value;
+            const Parch = document.getElementById('parch').value;
+            const Fare = document.getElementById('fare').value;
+
+            const data = {
+                Pclass,
+                Sex,
+                Age,
+                SibSp,
+                Parch,
+                Fare
+            };
+
+            fetch('http://127.0.0.1:8086/api/titanic/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(prediction => {
+                document.getElementById('prediction').innerText = `Survival Prediction: ${prediction.message*100}%`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
