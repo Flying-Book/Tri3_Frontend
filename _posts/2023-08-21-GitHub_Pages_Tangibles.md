@@ -9,9 +9,7 @@ courses: { compsci: {week: 1} }
 ---
 
 ### Summary of Accomplishments
-> Update Blog to contain all hacks.  
-- Reviewed with Pair.  Discuss/Show evidence.
-- Discuss laptop, cloud computer.
+> Update Blog to contain all hackDiscuss laptop, cloud computer.
 - Discuss tools setup and troubles.
 - Show personal blog / home page.
 - Show how you are maintaining notes, answering hacks, and showing tangibles.  
