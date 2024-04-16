@@ -3,7 +3,6 @@ layout: page
 title: About Us
 permalink: /about/
 ---
-
 # About Our Team
 
 Welcome to the About page of our team's GitHub Pages! We are a team passionate about computer science and technology, with a focus on exploring the concept of staying healthy and fit. 
