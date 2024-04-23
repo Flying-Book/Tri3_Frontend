@@ -124,8 +124,7 @@ permalink: /fitness_check/
             // var predictedCalories = parseInt(data.predicted_calories);
             // predictedCalories = predictedCalories.toFixed(2);
             // document.getElementById('message').innerText = "Predicted Calorie Burn: " + predictedCalories;
-            var result = jsonData.predicted_calories\
-            document.getElementById('message').innerText = "Predicted Calorie Burn: " + result;
+            document.getElementById('message').innerText = "Predicted Calorie Burn: " + jsonData;
 
             // Display a random motivational message
             var messages = [
