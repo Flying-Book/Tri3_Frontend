@@ -119,8 +119,10 @@ permalink: /fitness_check/
 
             // Display the predicted calorie burn from the backend response
 
-            var predictedCalories = parseFloat(jsonData.predicted_calories);
-            predictedCalories = predictedCalories.toFixed(2);
+            // var predictedCalories = parseFloat(jsonData.predicted_calories);
+            // var predictedCalories = jsonData.predicted_calories
+            var predictedCalories = parseInt(data.predicted_calories);
+            // predictedCalories = predictedCalories.toFixed(2);
             document.getElementById('message').innerText = "Predicted Calorie Burn: " + predictedCalories;
 
             // Display a random motivational message
