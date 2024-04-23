@@ -94,9 +94,9 @@ permalink: /fitness_check/
 
         // Prepare the data to send to the backend API
         var data = {
-            "duration": parseInt(duration),
-            "bpm": parseInt(bpm),
-            "intensity": parseInt(intensity)
+            "Duration": parseInt(duration),
+            "BPM": parseInt(bpm),
+            "Intensity": parseInt(intensity)
         };
 
         // Make a POST request to the backend API endpoint
